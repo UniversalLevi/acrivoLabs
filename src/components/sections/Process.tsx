@@ -1,38 +1,68 @@
+"use client";
+
 import { processSteps } from "@/lib/constants";
 import { ArrowRight } from "lucide-react";
+import FadeIn from "../ui/FadeIn";
+import { motion } from "framer-motion";
 
 export default function Process() {
   return (
-    <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
-      <div className="max-w-content mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            How We Work
-          </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            A clear, structured process that keeps you informed every step of
-            the way
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {processSteps.map((step, index) => (
-            <div key={step.id} className="relative">
-              <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl p-6 h-full">
-                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-primary-blue to-primary-blue-light text-white font-bold text-xl mb-4">
-                  {step.id}
-                </div>
-                <h3 className="text-xl font-semibold text-text-primary mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-text-secondary text-sm">{step.description}</p>
-              </div>
-              {index < processSteps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                  <ArrowRight className="w-8 h-8 text-primary-blue" />
-                </div>
-              )}
-            </div>
-          ))}
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 to-dark-950/50" />
+      
+      <div className="max-w-content mx-auto relative z-10">
+        <FadeIn direction="up" delay={0.2}>
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+              How We <span className="text-neon-cyan">Work</span>
+            </h2>
+            <p className="text-text-secondary text-xl max-w-2xl mx-auto">
+              A clear, structured process that keeps you informed every step of
+              the way
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="relative">
+          {/* Connecting line for desktop */}
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-neon-cyan/20 via-neon-blue/30 to-neon-cyan/20" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative">
+            {processSteps.map((step, index) => (
+              <FadeIn key={step.id} delay={index * 0.15} direction="up">
+                <motion.div
+                  className="relative"
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="glass-panel border border-neon-cyan/20 rounded-xl p-6 h-full hover:border-neon-cyan/40 hover:shadow-neon transition-all duration-300 group">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-neon-cyan to-neon-blue text-dark-950 font-bold text-xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-neon">
+                      {step.id}
+                    </div>
+                    <h3 className="text-xl font-semibold text-text-primary mb-3 group-hover:text-neon-cyan transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-text-secondary text-sm leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                  
+                  {/* Arrow connector for desktop */}
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                      <motion.div
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        <ArrowRight className="w-8 h-8 text-neon-cyan" />
+                      </motion.div>
+                    </div>
+                  )}
+                </motion.div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "ghost" | "outline";
   href?: string;
   children: ReactNode;
 }
@@ -13,18 +13,21 @@ export default function Button({
   href,
   children,
   className,
+  disabled,
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black";
+    "inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-neon-cyan focus:ring-offset-2 focus:ring-offset-dark-950 disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-primary-blue to-primary-blue-light text-white hover:from-primary-blue-dark hover:to-primary-blue focus:ring-primary-blue",
+      "bg-gradient-to-r from-neon-cyan to-neon-blue text-dark-950 hover:shadow-neon-blue hover:scale-[1.02] active:scale-[0.98] font-bold",
     secondary:
-      "bg-gradient-to-r from-accent-orange to-accent-orange-light text-white hover:from-accent-orange-dark hover:to-accent-orange focus:ring-accent-orange",
+      "bg-gradient-to-r from-accent-orange to-accent-orange-light text-white hover:from-accent-orange-dark hover:to-accent-orange hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+    ghost:
+      "text-text-secondary hover:text-neon-cyan hover:bg-dark-800/50 border border-transparent hover:border-neon-cyan/30",
     outline:
-      "border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white focus:ring-primary-blue",
+      "border-2 border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon hover:scale-[1.02] active:scale-[0.98] backdrop-blur-sm",
   };
 
   const classes = cn(baseStyles, variants[variant], className);
@@ -38,7 +41,7 @@ export default function Button({
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} disabled={disabled} {...props}>
       {children}
     </button>
   );
