@@ -40,7 +40,7 @@ export default function AboutPage() {
               About <span className="text-neon-cyan">Acrivo Labs</span>
             </h1>
             <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              We're a creative digital agency focused on building meaningful
+              We&apos;re a creative digital agency focused on building meaningful
               experiences that help businesses grow.
             </p>
           </div>
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <p className="text-text-secondary text-lg leading-relaxed">
                   Acrivo Labs was founded with a simple belief: great design and
                   technology should be accessible to every business, regardless of
-                  size. We're a team of designers and developers who are passionate
+                  size. We&apos;re a team of designers and developers who are passionate
                   about creating digital experiences that not only look great but
                   also drive real results.
                 </p>
@@ -136,10 +136,10 @@ export default function AboutPage() {
         <FadeIn direction="up" delay={0.7}>
           <div className="text-center glass-panel border border-neon-cyan/20 rounded-2xl p-8 md:p-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Let's Work Together
+              Let&apos;s Work Together
             </h2>
             <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-              Ready to elevate your digital presence? Get in touch and let's discuss your project.
+              Ready to elevate your digital presence? Get in touch and let&apos;s discuss your project.
             </p>
             <Button href="/contact" variant="primary" className="text-lg px-8 py-4">
               Start a Conversation

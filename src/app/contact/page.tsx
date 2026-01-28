@@ -28,7 +28,7 @@ export default function ContactPage() {
               Get in <span className="text-neon-cyan">Touch</span>
             </h1>
             <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              Ready to start your project? Let's discuss how we can help bring
+              Ready to start your project? Let&apos;s discuss how we can help bring
               your vision to life.
             </p>
           </div>
