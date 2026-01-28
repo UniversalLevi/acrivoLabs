@@ -26,14 +26,14 @@ export default function CTA() {
             
             <div className="relative z-10">
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
-                Let's build something{" "}
+                Let&apos;s build something{" "}
                 <span className="bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
                   meaningful
                 </span>{" "}
                 together
               </h2>
               <p className="text-text-secondary text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-                Ready to start your project? Get in touch and let's discuss how we
+                Ready to start your project? Get in touch and let&apos;s discuss how we
                 can help bring your vision to life.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

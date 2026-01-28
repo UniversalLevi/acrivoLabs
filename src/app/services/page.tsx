@@ -56,7 +56,7 @@ export default function ServicesPage() {
                       {service.whoItsFor && (
                         <div>
                           <h3 className="text-xl font-semibold mb-3 text-neon-cyan">
-                            Who It's For
+                            Who It&apos;s For
                           </h3>
                           <p className="text-text-secondary leading-relaxed">{service.whoItsFor}</p>
                         </div>
@@ -115,7 +115,7 @@ export default function ServicesPage() {
               Ready to Get Started?
             </h2>
             <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help bring your vision to life.
+              Let&apos;s discuss how we can help bring your vision to life.
             </p>
             <Button href="/contact" variant="primary" className="text-lg px-8 py-4">
               Book a Discovery Call
