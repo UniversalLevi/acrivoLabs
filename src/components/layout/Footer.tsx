@@ -28,7 +28,7 @@ export default function Footer() {
           {/* About Section */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center space-x-3 mb-6 group">
-              <div className="relative w-10 h-10 transition-transform group-hover:scale-110">
+              <div className="relative w-12 h-12 transition-transform group-hover:scale-110">
                 <Image
                   src="/logo.png"
                   alt="Acrivo Labs"

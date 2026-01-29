@@ -46,7 +46,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-10 h-10 transition-transform group-hover:scale-110">
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 transition-transform group-hover:scale-110">
               <Image
                 src="/logo.png"
                 alt="Acrivo Labs"
@@ -55,7 +55,7 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-cyan bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
+            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-cyan bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
               Acrivo Labs
             </span>
           </Link>
