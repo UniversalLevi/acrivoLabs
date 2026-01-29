@@ -161,8 +161,8 @@ export const projects: Project[] = [
 ];
 
 export const contactInfo: ContactInfo = {
-  email: "hello@acrivolabs.com",
-  whatsapp: "+1234567890",
+  email: "acrivolabs@gmail.com",
+  whatsapp: "+91 96430 62851",
   workingHours: "Monday - Friday: 9:00 AM - 6:00 PM",
 };
 
